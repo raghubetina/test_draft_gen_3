@@ -11,16 +11,6 @@
     <div class="collapse navbar-collapse" id="collapsible-nav-links">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a href="/passengers" class="nav-link">
-            Passengers
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/drivers" class="nav-link">
-            Drivers
-          </a>
-        </li>
-        <li class="nav-item">
           <a href="/photos" class="nav-link">
             Photos
           </a>
@@ -30,17 +20,17 @@
         <% if current_passenger.blank? %>
           <li class="nav-item">
             <a href="/passengers/sign_in" class="nav-link">
-              
+
               Passenger Sign in
-              
+
             </a>
           </li>
 
           <li class="nav-item">
             <a href="/passengers/sign_up" class="nav-link">
-              
+
               Passenger Sign up
-              
+
             </a>
           </li>
         <% else %>
@@ -61,17 +51,17 @@
         <% if current_driver.blank? %>
           <li class="nav-item">
             <a href="/drivers/sign_in" class="nav-link">
-              
+
               Driver Sign in
-              
+
             </a>
           </li>
 
           <li class="nav-item">
             <a href="/drivers/sign_up" class="nav-link">
-              
+
               Driver Sign up
-              
+
             </a>
           </li>
         <% else %>
