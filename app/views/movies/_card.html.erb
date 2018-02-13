@@ -1,0 +1,28 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Movie #<%= movie.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Title</dt>
+      <dd><%= movie.title %></dd>
+
+      <dt>Description</dt>
+      <dd><%= movie.description %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified mt-auto">
+      <%= link_to_show_or_back movie, fa_icon("search-plus"), fa_icon("chevron-left"), class: "btn btn-outline-secondary" %>
+
+      <%= link_to fa_icon("edit"), edit_movie_url(movie), class: "btn btn-outline-secondary" %>
+
+      <%= link_to fa_icon("trash-o"), movie, method: :delete, data: { confirm: "Do you really want to delete this movie?" }, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(movie.updated_at) %> ago
+  </div>
+</div>
