@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "photos#index"
+  
   devise_for :passengers
   devise_for :drivers
   # Routes for the Photo resource:
