@@ -2,7 +2,7 @@
   <div class="offset-md-3 col-md-6">
     <div class="card mb-3">
       <h5 class="card-header">
-        Sign Up
+        <%= resource_name != "user" ? resource_name.to_s.titleize : "" %> Sign Up
       </h5>
 
       <div class="card-body">
