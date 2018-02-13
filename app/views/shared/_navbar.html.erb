@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      TestDraftGen3
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-nav-links" aria-controls="collapsible-nav-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsible-nav-links">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a href="/passengers" class="nav-link">
+            Passengers
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/drivers" class="nav-link">
+            Drivers
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/photos" class="nav-link">
+            Photos
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <% if current_passenger.blank? %>
+          <li class="nav-item">
+            <a href="/passengers/sign_in" class="nav-link">
+              
+              Passenger Sign in
+              
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/passengers/sign_up" class="nav-link">
+              
+              Passenger Sign up
+              
+            </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="/passengers/edit" class="nav-link">
+              Edit profile
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/passengers/sign_out" data-method="delete" class="nav-link">
+              Sign out
+            </a>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav">
+        <% if current_driver.blank? %>
+          <li class="nav-item">
+            <a href="/drivers/sign_in" class="nav-link">
+              
+              Driver Sign in
+              
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/drivers/sign_up" class="nav-link">
+              
+              Driver Sign up
+              
+            </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="/drivers/edit" class="nav-link">
+              Edit profile
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/drivers/sign_out" data-method="delete" class="nav-link">
+              Sign out
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div> <!-- .navbar-collapse -->
+  </div> <!-- .container -->
+</nav>
