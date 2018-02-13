@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :drivers
   # Routes for the Photo resource:
 
   # CREATE
