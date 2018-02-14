@@ -1,49 +1,60 @@
-<h1>
-  Photo #<%= @photo.id %> details
-</h1>
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <div class="card">
+      <h1 class="card-header h4 d-flex align-items-center">
+        <a href="/photos" class="btn btn-sm btn-outline-secondary mr-3">
+          <i class="fas fa-chevron-left fa-fw"></i>
+        </a>
 
-<a href="/photos/<%= @photo.id %>/edit">
-  Edit photo
-</a>
+        Photo #<%= @photo.id %> details
+      </h1>
 
-<hr>
+      <div class="card-body">
+        <dl>
+          <dt>
+            Image
+          </dt>
+          <dd>
+            <%= @photo.image %>
+          </dd>
 
-<dl>
-  <dt>
-    Image
-  </dt>
-  <dd>
-    <%= @photo.image %>
-  </dd>
+          <dt>
+            Caption
+          </dt>
+          <dd>
+            <%= @photo.caption %>
+          </dd>
 
-  <dt>
-    Caption
-  </dt>
-  <dd>
-    <%= @photo.caption %>
-  </dd>
+          <dt>
+            Created at
+          </dt>
+          <dd>
+            <%= time_ago_in_words(@photo.created_at) %> ago
+          </dd>
 
-  <dt>
-    Created at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@photo.created_at) %> ago
-  </dd>
+          <dt>
+            Updated at
+          </dt>
+          <dd>
+            <%= time_ago_in_words(@photo.updated_at) %> ago
+          </dd>
+        </dl>
+      </div>
 
-  <dt>
-    Updated at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@photo.updated_at) %> ago
-  </dd>
-</dl>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col">
+            <a href="/photos/<%= @photo.id %>/edit" class="btn btn-block btn-outline-secondary">
+              Edit photo
+            </a>
+          </div>
 
-<a href="/delete_photo/<%= @photo.id %>">
-  Delete photo
-</a>
-
-<hr>
-
-<a href="/photos">
-  Go back
-</a>
+          <div class="col">
+            <a href="/delete_photo/<%= @photo.id %>" class="btn btn-block btn-outline-secondary">
+              Delete photo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
