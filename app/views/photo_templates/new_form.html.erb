@@ -10,38 +10,9 @@
       </h1>
 
       <div class="card-body">
-        <!-- Validation failure messages -->
-        <% if @photo.errors.any? %>
-          <% @photo.errors.full_messages.each do |message| %>
-            <div class="alert alert-danger alert-dismissable">
-              <%= message %>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render "photo_templates/new_form_validation_messages" %>
 
-        <form action="/create_photo" method="post">
-          <!-- Label and input for image -->
-          <div class="form-group">
-            <label for="image">
-              Image
-            </label>
-
-            <input type="text" id="image" name="image" class="form-control" value="<%= @photo.image %>">
-          </div>
-
-          <!-- Label and input for caption -->
-          <div class="form-group">
-            <label for="caption">
-              Caption
-            </label>
-
-            <textarea id="caption" name="caption" class="form-control" rows="3"><%= @photo.caption %></textarea>
-          </div>
-
-          <button class="btn btn-block btn-outline-secondary">
-            Create photo
-          </button>
-        </form>
+        <%= render "photo_templates/create_form" %>
       </div>
     </div>
   </div>
