@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "draft_log", github: "firstdraft/draft_log"
+
 gem "draft_generators", github: "firstdraft/draft_generators", branch: "23-consolidate-devise-generators"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

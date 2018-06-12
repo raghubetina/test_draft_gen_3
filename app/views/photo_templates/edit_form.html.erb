@@ -1,48 +1,19 @@
-<!-- Validation failure messages -->
-<% if @photo.errors.any? %>
-  <% @photo.errors.full_messages.each do |message| %>
-    <div class="alert alert-danger alert-dismissable" role="alert">
-      <%= message %>
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <div class="card">
+      <h1 class="card-header h4 d-flex align-items-center">
+        <a href="/photos/<%= @photo.id %>" class="btn btn-sm btn-outline-secondary mr-3">
+          <i class="fas fa-chevron-left fa-fw"></i>
+        </a>
 
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+        Edit photo #<%= @photo.id %>
+      </h1>
+
+      <div class="card-body">
+        <%= render "photo_templates/edit_form_validation_messages" %>
+
+        <%= render "photo_templates/update_form" %>
+      </div>
     </div>
-  <% end %>
-<% end %>
-
-<h1>
-  Edit photo #<%= @photo.id %>
-</h1>
-
-<hr>
-
-<form action="/update_photo/<%= @photo.id %>" method="post">
-  <!-- Label and input for image -->
-  <div class="form-group">
-    <label for="image">
-      Image
-    </label>
-
-    <input type="text" id="image" name="image" class="form-control" value="<%= @photo.image %>">
   </div>
-
-  <!-- Label and input for caption -->
-  <div class="form-group">
-    <label for="caption">
-      Caption
-    </label>
-
-    <textarea id="caption" name="caption" class="form-control" rows="3"><%= @photo.caption %></textarea>
-  </div>
-
-  <button class="btn btn-block btn-outline-secondary">
-    Update photo
-  </button>
-</form>
-
-<hr>
-
-<a href="/photos">
-  Go back
-</a>
+</div>

@@ -1,0 +1,31 @@
+<div class="card-body">
+  <dl>
+    <dt>
+      Image
+    </dt>
+    <dd>
+      <%= @photo.image %>
+    </dd>
+
+    <dt>
+      Caption
+    </dt>
+    <dd>
+      <%= @photo.caption %>
+    </dd>
+
+    <dt>
+      Created at
+    </dt>
+    <dd>
+      <%= time_ago_in_words(@photo.created_at) %> ago
+    </dd>
+
+    <dt>
+      Updated at
+    </dt>
+    <dd>
+      <%= time_ago_in_words(@photo.updated_at) %> ago
+    </dd>
+  </dl>
+</div>

@@ -1,0 +1,23 @@
+<form action="/create_photo" method="post">
+  <!-- Label and input for image -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <input type="text" id="image" name="image" class="form-control" value="<%= @photo.image %>">
+  </div>
+
+  <!-- Label and input for caption -->
+  <div class="form-group">
+    <label for="caption">
+      Caption
+    </label>
+
+    <textarea id="caption" name="caption" class="form-control" rows="3"><%= @photo.caption %></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create photo
+  </button>
+</form>
